@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+    </script>
 </head>
 <body class="bg-gray-100">
 
@@ -15,44 +24,48 @@
                 <h1 class="text-xl font-bold">Dashboard</h1>
             </div>
             <nav class="mt-6">
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profile</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Settings</a>
-                <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Logout</a>
+                <a href="#" onclick="alert('Home clicked!')" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
+                <a href="#" onclick="alert('Profile clicked!')" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profile</a>
+                <a href="#" onclick="alert('Settings clicked!')" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Settings</a>
+                <a href="#" onclick="alert('Logout clicked!')" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Logout</a>
             </nav>
         </div>
 
         <!-- Main Content -->
         <div class="flex-1 p-6">
-            <h2 class="text-2xl font-semibold">Welcome to the Dashboard</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <header class="flex items-center justify-between mb-6">
+                <h2 class="text-2xl font-semibold">Welcome to the Dashboard</h2>
+                <div>
+                    <button onclick="alert('Add New clicked!')" class="bg-blue-500 text-white px-4 py-2 rounded">Add New</button>
+                </div>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 1</h3>
                     <p>Some content for card 1.</p>
+                    <button onclick="openModal('modal1')" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Open Modal 1</button>
                 </div>
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 2</h3>
                     <p>Some content for card 2.</p>
+                    <button onclick="openModal('modal2')" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Open Modal 2</button>
                 </div>
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 3</h3>
                     <p>Some content for card 3.</p>
+                    <button onclick="openModal('modal3')" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Open Modal 3</button>
                 </div>
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 4</h3>
                     <p>Some content for card 4.</p>
+                    <button onclick="openModal('modal4')" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Open Modal 4</button>
                 </div>
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 5</h3>
                     <p>Some content for card 5.</p>
+                    <button onclick="openModal('modal5')" class="mt-4 bg-green-500 text-white px-4 py-2 rounded">Open Modal 5</button>
                 </div>
                 <div class="bg-white p-4 shadow rounded">
                     <h3 class="font-bold">Card 6</h3>
-                    <p>Some content for card 6.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+                    <p>
